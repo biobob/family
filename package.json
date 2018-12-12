@@ -1,0 +1,17 @@
+{
+  "name": "family-komorovski",
+  "version": "0.0.1",
+  "description": "komorovski.familty website",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-debug": "latest",
+    "fancy-log": "latest",
+    "vinyl-ftp": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biobob/family.git"
+  },
+  "author": "Róbert Komorovský",
+  "license": "MIT"
+}

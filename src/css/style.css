@@ -1,36 +1,92 @@
 body {
   margin: 0;
   font-size: 1em;
+  --site-padding: 0.7em;
+  --head-top-font-color: #fff;
+  --head-scr-font-color: #aaa;
+}
+body > *:not(header) {
+  margin-left: var(--site-padding);
+  margin-right: var(--site-padding);
 }
 header {
-  /*background-color: #fff;*/
   width: 100%;
   position: fixed;
   top: 0;
+  padding-top: var(--site-padding);
   z-index: 3;
+  font-family: 'Cinzel', serif;
+  font-size: 14pt;
+  background-color: #ffffff00;
+  transition: background-color 0.2s ease-out;
+  box-shadow: 1px 1px 3px 0 #00000000;
+  transition: box-shadow 0.2s ease-out;
 }
-header a {
-  color: white;
-  font-size: 200%;
+header.scroll {
+  background-color: #ffffffff;
+  box-shadow: 1px 1px 4px 0 #00000066;
 }
-img {
-  width: 100%;
+header > a {
+  float: left;
+  padding-left: var(--site-padding);
 }
-body {
-  background-color: black;
+header ul {
+  margin: 0;
+  padding: 0 0 0.5em 0;
+  float: right;
+  list-style: none;
+  padding-right: var(--site-padding);
+}
+header ul li {
+  float: left;
+}
+header ul li a {
+  display: block;
+  text-decoration: none;
+  padding: var(--site-padding);
+  margin-top: 0.5em;
+  color: var(--head-top-font-color);
+  transition: color 0.2s ease-out;
+  /*
+  text-shadow: 0.05em 0.03em #888888ff;
+  transition: text-shadow 0.2s ease-out;
+  */
+}
+header.scroll ul li a {
+  color: var(--head-scr-font-color);
+  /*
+  text-shadow: 0 0 #888888ff;
+  */
+}
+header ul li a.current {
+  color: darkgreen;
+  cursor: default;
+}
+.logo {
+  fill: var(--head-top-font-color);
+  transition: fill 0.2s ease-out;
+}
+header.scroll .logo {
+  fill: var(--head-scr-font-color);
+}
+header + * {
+  margin-top: 100px;
+}
+p {
+  text-align: justify;
 }
 @media screen and (max-width: 35.5em) { /* 568px or less */
-  /*body {
+  body {
     background-color: lightpink;
-  }*/
+  }
 }
 @media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
-  /*body {
+  body {
     background-color: lightgoldenrodyellow;
-  }*/
+  }
 }
 @media screen and (min-width: 48em) { /* 1024px */
-  /*body {
+  body {
     background-color: lightgreen;
-  }*/
+  }
 }

@@ -1,3 +1,18 @@
-html {
-  background-color: lightblue;
+body {
+  font-size: 1em;
+}
+@media screen and (max-width: 35.5em) { /* 568px or less */
+  body {
+    background-color: lightpink;
+  }
+}
+@media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
+  body {
+    background-color: lightgoldenrodyellow;
+  }
+}
+@media screen and (min-width: 48em) { /* 1024px */
+  body {
+    background-color: lightgreen;
+  }
 }

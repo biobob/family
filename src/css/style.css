@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-size: 1em;
-  --site-padding: 0.7em;
+  --site-padding: 1.2em;
   --head-top-font-color: #fff;
   --head-scr-font-color: #aaa;
 }
@@ -43,7 +43,7 @@ header ul li {
 header ul li a {
   display: block;
   text-decoration: none;
-  padding: var(--site-padding);
+  padding: 0.7em;
   margin-top: 0.5em;
   color: var(--head-top-font-color);
   transition: color 0.2s ease-out;
@@ -51,6 +51,9 @@ header ul li a {
   text-shadow: 0.05em 0.03em #888888ff;
   transition: text-shadow 0.2s ease-out;
   */
+}
+header ul li a:last-child {
+  padding-right: 0;
 }
 header.scroll ul li a {
   color: var(--head-scr-font-color);

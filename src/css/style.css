@@ -26,7 +26,8 @@ header.scroll {
   background-color: #ffffffff;
   box-shadow: 1px 1px 4px 0 #00000066;
 }
-header > a {
+header > .wrapper > a {
+  flex-grow: 1;
   float: left;
   padding-left: var(--site-padding);
 }
@@ -72,23 +73,40 @@ header ul li a.current {
 header.scroll .logo {
   fill: var(--head-scr-font-color);
 }
-header + * {
-  margin-top: 100px;
+.wrapper {
+  display: flex;
+  /*max-width: 60em;*/
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wrapper > section {
+  flex-grow: 1;
+  margin-top: 4em;
+  padding: var(--site-padding);
 }
 p {
   text-align: justify;
 }
 @media screen and (max-width: 35.5em) { /* 568px or less */
+  header ul {
+    display: none;
+  }
   body {
     background-color: lightpink;
   }
 }
 @media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
+  header ul {
+    display: none;
+  }
   body {
     background-color: lightgoldenrodyellow;
   }
 }
 @media screen and (min-width: 48em) { /* 1024px */
+  header ul {
+    display: block;
+  }
   body {
     background-color: lightgreen;
   }

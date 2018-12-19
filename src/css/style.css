@@ -95,46 +95,32 @@ header.scroll .logo {
 }
 #hamburger {
   float: right;
-  position: relative;
   height: 1em;
   width: 1em;
   cursor: pointer;
   user-select: none;
-  overflow: hidden;
   margin: var(--menu-margin) 0;
   padding: var(--menu-vrt-padding) var(--menu-hrz-padding);
   padding-right: 0;
-  overflow: visible;
 }
-#hamburger > span {
-  display: block;
-  position: relative;
+#hamburger > div {
   height: 2px;
   width: 1em;
+  margin: 3px auto;
   background-color: var(--head-top-font-color);
-  transition: background-color .2s ease-out;
-  top: 0.45em;
-}
-header.scroll #hamburger > span,
-header.scroll #hamburger > span:before,
-header.scroll #hamburger > span:after {
-  background-color: var(--head-scr-font-color);
-}
-#hamburger > span:before,
-#hamburger > span:after {
-  background-color: var(--head-top-font-color);
-  content: '';
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
   transition: all .2s ease-out;
 }
-#hamburger > span:before {
-  top: 5px;
+header.scroll #hamburger > div {
+  background-color: var(--head-scr-font-color);
 }
-#hamburger > span:after {
-  top: -5px;
+#menu-flag:checked ~ #hamburger > div:nth-child(1) {
+  transform: translateY(0.27em) rotateZ(45deg);
+}
+#menu-flag:checked ~ #hamburger > div:nth-child(2) {
+  width: 0;
+}
+#menu-flag:checked ~ #hamburger > div:nth-child(3) {
+  transform: translateY(-0.27em) rotateZ(-45deg);
 }
 p {
   text-align: justify;

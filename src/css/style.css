@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-size: 1em;
   --site-padding: 1.2em;
+  --menu-hrz-padding: 0.4em;
+  --menu-vrt-padding: 0.7em;
+  --menu-margin: 0.5em;
   --head-top-font-color: #fff;
   --head-scr-font-color: #aaa;
 }
@@ -13,6 +16,7 @@ header {
   z-index: 3;
   font-family: 'Cinzel', serif;
   font-size: 14pt;
+  line-height: 1;
   background-color: #ffffff00;
   transition: background-color 0.2s ease-out;
   box-shadow: 1px 1px 3px 0 #00000000;
@@ -28,6 +32,7 @@ header > .wrapper > a {
   padding-left: var(--site-padding);
 }
 header ul {
+  float: left;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -38,8 +43,8 @@ header ul li {
 header ul li a {
   display: block;
   text-decoration: none;
-  padding: 0.7em;
-  margin-top: 0.5em;
+  padding: var(--menu-vrt-padding) var(--menu-hrz-padding);
+  margin: var(--menu-margin) 0;
   color: var(--head-top-font-color);
   transition: color 0.2s ease-out;
   /*
@@ -47,7 +52,8 @@ header ul li a {
   transition: text-shadow 0.2s ease-out;
   */
 }
-header ul li a:last-child {
+
+header ul li:last-child a {
   padding-right: 0;
 }
 header.scroll ul li a {
@@ -80,29 +86,32 @@ header.scroll .logo {
 }
 #menu {
   padding-right: var(--site-padding);
+  vertical-align: top;
 }
 #menu-flag {
   display: none;
 }
 #hamburger {
-  display: inline-block;
-  cursor: pointer;
+  float: right;
   position: relative;
+  height: 1em;
+  width: 1em;
+  cursor: pointer;
   user-select: none;
-  width: 18px;
-  top: -0.3em;
   overflow: hidden;
-  margin-left: 0.6em;
-  margin-top: 0.6em;
-  padding: 0.7em 0;
+  margin: var(--menu-margin) 0;
+  padding: var(--menu-vrt-padding) var(--menu-hrz-padding);
+  padding-right: 0;
+  overflow: visible;
 }
 #hamburger > span {
-  background-color: var(--head-top-font-color);
-  display: inline-block;
-  height: 2px;
+  display: block;
   position: relative;
+  height: 2px;
+  width: 1em;
+  background-color: var(--head-top-font-color);
   transition: background-color .2s ease-out;
-  width: 18px;
+  top: 0.45em;
 }
 header.scroll #hamburger > span,
 header.scroll #hamburger > span:before,
@@ -138,8 +147,8 @@ p {
   body {
     background-color: lightpink;
   }
-}
-@media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
+
+}@media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
   header ul {
     display: inline-block;
   }

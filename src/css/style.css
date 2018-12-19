@@ -5,10 +5,6 @@ body {
   --head-top-font-color: #fff;
   --head-scr-font-color: #aaa;
 }
-body > *:not(header) {
-  margin-left: var(--site-padding);
-  margin-right: var(--site-padding);
-}
 header {
   width: 100%;
   position: fixed;
@@ -33,10 +29,8 @@ header > .wrapper > a {
 }
 header ul {
   margin: 0;
-  padding: 0 0 0.5em 0;
-  float: right;
+  padding: 0;
   list-style: none;
-  padding-right: var(--site-padding);
 }
 header ul li {
   float: left;
@@ -62,7 +56,7 @@ header.scroll ul li a {
   text-shadow: 0 0 #888888ff;
   */
 }
-header ul li a.current {
+header ul li.current a {
   color: darkgreen;
   cursor: default;
 }
@@ -84,6 +78,53 @@ header.scroll .logo {
   margin-top: 4em;
   padding: var(--site-padding);
 }
+#menu {
+  padding-right: var(--site-padding);
+}
+#menu-flag {
+  display: none;
+}
+#hamburger {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  width: 18px;
+  top: -0.3em;
+  overflow: hidden;
+  margin-left: 0.6em;
+  margin-top: 0.6em;
+  padding: 0.7em 0;
+}
+#hamburger > span {
+  background-color: var(--head-top-font-color);
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  transition: background-color .2s ease-out;
+  width: 18px;
+}
+header.scroll #hamburger > span,
+header.scroll #hamburger > span:before,
+header.scroll #hamburger > span:after {
+  background-color: var(--head-scr-font-color);
+}
+#hamburger > span:before,
+#hamburger > span:after {
+  background-color: var(--head-top-font-color);
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+}
+#hamburger > span:before {
+  top: 5px;
+}
+#hamburger > span:after {
+  top: -5px;
+}
 p {
   text-align: justify;
 }
@@ -91,21 +132,39 @@ p {
   header ul {
     display: none;
   }
+  #hamburger {
+    display: inline-block;
+  }
   body {
     background-color: lightpink;
   }
 }
 @media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
   header ul {
+    display: inline-block;
+  }
+  header ul li:not(.current) {
     display: none;
   }
+  header ul li.current a {
+    color: var(--head-top-font-color);
+  }
+  header.scroll ul li.current a {
+    color: var(--head-scr-font-color);
+  }
+  #hamburger {
+    display: inline-block;
+  }
   body {
-    background-color: lightgoldenrodyellow;
+    background-color: lightblue;
   }
 }
 @media screen and (min-width: 48em) { /* 1024px */
   header ul {
-    display: block;
+    display: inline-block;
+  }
+  #hamburger {
+    display: none;
   }
   body {
     background-color: lightgreen;

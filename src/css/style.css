@@ -26,7 +26,7 @@ header.scroll {
   background-color: #fff;
   box-shadow: 1px 1px 3px 0;
 }
-header > .wrapper > a {
+header > .wrapper > div:first-child {
   flex-grow: 1;
   float: left;
   padding-left: var(--site-hrz-padding);

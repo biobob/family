@@ -172,7 +172,8 @@ header.scroll #hamburger > div {
 }
 .cover .overlay p {
   text-align: center;
-  margin: 0;
+  margin: 0.5em 0;
+  padding: 0 var(--site-hrz-padding);
   cursor: default;
 }
 .cover .overlay p > * {
@@ -218,6 +219,12 @@ p {
   #hamburger {
     display: inline-block;
   }
+  .wide {
+    display: none;
+  }
+  .narrow {
+    display: inline;
+  }
 }
 @media screen and (min-width: 35.5em) and (max-width: 48em) { /* 568px - 768px */
   header ul {
@@ -235,12 +242,24 @@ p {
   #hamburger {
     display: inline-block;
   }
+  .wide {
+    display: inline;
+  }
+  .narrow {
+    display: none;
+  }
 }
 @media screen and (min-width: 48em) { /* 1024px */
   header ul {
     display: inline-block;
   }
   #hamburger {
+    display: none;
+  }
+  .wide {
+    display: inline;
+  }
+  .narrow {
     display: none;
   }
 }

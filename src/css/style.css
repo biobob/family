@@ -68,12 +68,10 @@ header ul li.current a {
 }
 .logo {
   fill: var(--head-top-font-color);
-  filter: drop-shadow(0.3px 0.1px 0.2px #00000099);
   transition: all 0.2s ease-out;
 }
 header.scroll .logo {
   fill: var(--head-scr-font-color);
-  filter: drop-shadow(0.3px 0.1px 0.2px #00000000);
 }
 .wrapper {
   display: flex;
@@ -155,6 +153,7 @@ header.scroll #hamburger > div {
 .cover {
   position: relative;
   height: 66vh;
+  min-height: 16em;
   transition: all .2s ease;
 }
 .cover > img {

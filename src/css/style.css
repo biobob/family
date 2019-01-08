@@ -153,6 +153,7 @@ header.scroll #hamburger > div {
   color: #fff;
 }
 .cover {
+  position: relative;
   height: 66vh;
   transition: all .2s ease;
 }
@@ -162,8 +163,9 @@ header.scroll #hamburger > div {
   object-fit: cover;
 }
 .cover .overlay {
-  position: relative;
-  top: -25vh;
+  position: absolute;
+  width: 100%;
+  bottom: 2em;
   font-family: 'Cinzel', serif;
   font-size: 120%;
   color: var(--head-top-font-color);
@@ -219,6 +221,9 @@ p {
   #hamburger {
     display: inline-block;
   }
+  .cover .overlay em {
+    font-size: 110%;
+  }
   .wide {
     display: none;
   }
@@ -241,6 +246,9 @@ p {
   }
   #hamburger {
     display: inline-block;
+  }
+  .cover .overlay em {
+    font-size: 120%;
   }
   .wide {
     display: inline;

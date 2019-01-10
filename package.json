@@ -1,7 +1,7 @@
 {
   "name": "family-komorovski",
   "version": "0.0.1",
-  "description": "komorovski.familty website",
+  "description": "komorovski.family website",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-debug": "latest",

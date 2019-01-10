@@ -4,7 +4,7 @@ const gulp = require('gulp'),
       ftp = require('vinyl-ftp'),
       min_htm = require('gulp-htmlmin'),
       min_css = require('gulp-clean-css'),
-      min_ecs = require('gulp-uglify'),
+      min_ecs = require('gulp-terser'),
       
       conf = {
           paths: {

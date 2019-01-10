@@ -37,12 +37,12 @@ header > .wrapper > div:first-child {
   padding-left: var(--site-hrz-padding);
 }
 .logo {
-  background-image: url(img/w.svg);
+  background-image: url(w.svg);
   background-repeat: no-repeat;
   background-position: var(--site-hrz-padding) 0;
 }
 header.scroll .logo {
-  background-image: url(img/g.svg);
+  background-image: url(g.svg);
 }
 header ul,
 #slider ul {

@@ -2,7 +2,8 @@ const gulp = require('gulp'),
       debug = require('gulp-debug'),
       log = require('fancy-log'),
       ftp = require('vinyl-ftp'),
-      htmlmin = require('gulp-htmlmin'),
+      min_htm = require('gulp-htmlmin'),
+      min_css = require('gulp-clean-css'),
       
       conf = {
           paths: {
@@ -30,12 +31,13 @@ const gulp = require('gulp'),
       html = () => gulp
           .src(conf.paths.src.htm)
           .pipe(debug({title: 'Debug html:'}))
-          .pipe(htmlmin({ collapseWhitespace: true }))
+          .pipe(min_htm({ collapseWhitespace: true }))
           .pipe(gulp.dest(conf.paths.dist)),
       
       css = () => gulp
           .src(conf.paths.src.css)
           .pipe(debug({title: 'Debug css:'}))
+          .pipe(min_css())
           .pipe(gulp.dest(conf.paths.dist)),      
 
       copy = () => gulp

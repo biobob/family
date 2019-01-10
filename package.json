@@ -6,7 +6,8 @@
     "gulp": "^4.0.0",
     "gulp-debug": "latest",
     "fancy-log": "latest",
-    "vinyl-ftp": "latest"
+    "vinyl-ftp": "latest",
+    "gulp-htmlmin": "latest"
   },
   "repository": {
     "type": "git",

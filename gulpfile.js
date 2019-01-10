@@ -7,6 +7,18 @@ const gulp = require('gulp'),
       min_ecs = require('gulp-terser'),
       header = require('gulp-header'),
       
+      banner = [
+          '/*',
+          ' *',
+          ' * Yo Dog, I heard you like digging into source code.',
+          ' *',
+          ' * So I put the GitHub link of this open source web page here:',
+          ' *     https://github.com/biobob/family',
+          ' *',
+          ' */',
+          ''
+      ].join('\n')
+      
       conf = {
           paths: {
               src: {
@@ -38,23 +50,14 @@ const gulp = require('gulp'),
           .src(conf.paths.src.css)
           .pipe(debug({title: 'Debug css:'}))
           .pipe(min_css())
+          .pipe(header(banner))
           .pipe(gulp.dest(conf.paths.dist)),
       
       ecs = () => gulp
           .src(conf.paths.src.ecs)
           .pipe(debug({title: 'Debug ecs:'}))
           .pipe(min_ecs())
-          .pipe(header([
-               '/*',
-               ' *',
-               ' * Yo Dog, I heard you like digging into source code.',
-               ' *',
-               ' * So I put the GitHub link of this open source web page here:',
-               ' *     https://github.com/biobob/family',
-               ' *',
-               ' */',
-               ''
-           ].join('\n')))
+          .pipe(header(banner))
           .pipe(gulp.dest(conf.paths.dist)),
 
       copy = () => gulp

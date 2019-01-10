@@ -10,3 +10,4 @@ Study materials used during development:
 Used [gulp](https://gulpjs.com/) plugins:  
 * [gulp-htmlmin](https://www.npmjs.com/package/gulp-htmlmin)
 * [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
+* [gulp-terser](https://www.npmjs.com/package/gulp-terser)

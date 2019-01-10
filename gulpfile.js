@@ -9,12 +9,10 @@ const gulp = require('gulp'),
       conf = {
           paths: {
               src: {
-                  dir: './src',
                   htm: './src/htm/*.html',
                   css: './src/css/*.css',
                   ecs: './src/ecs/*.js',
-                  img: './src/img/*.*',
-                  res: './src/res/*.*'
+                  img: './src/img/*.*'
               },
               dist: './dist'
           },
@@ -48,7 +46,7 @@ const gulp = require('gulp'),
           .pipe(gulp.dest(conf.paths.dist)),
 
       copy = () => gulp
-          .src([conf.paths.src.img, conf.paths.src.res], {base: conf.paths.src.dir})
+          .src(conf.paths.src.img)
           .pipe(debug({title: 'Debug copy:'}))
           .pipe(gulp.dest(conf.paths.dist)),
       

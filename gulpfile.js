@@ -7,7 +7,7 @@ const gulp = require('gulp'),
           paths: {
               src: {
                   dir: './src',
-                  htm: './src/html/*.html',
+                  htm: './src/htm/*.html',
                   css: './src/css/*.css',
                   ecs: './src/ecs/*.js',
                   php: './src/php/*.php',

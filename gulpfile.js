@@ -5,6 +5,7 @@ const gulp = require('gulp'),
       min_htm = require('gulp-htmlmin'),
       min_css = require('gulp-clean-css'),
       min_ecs = require('gulp-terser'),
+      header = require('gulp-header'),
       
       conf = {
           paths: {
@@ -43,6 +44,16 @@ const gulp = require('gulp'),
           .src(conf.paths.src.ecs)
           .pipe(debug({title: 'Debug ecs:'}))
           .pipe(min_ecs())
+          .pipe(header([
+               '/*',
+               ' *',
+               ' * Yo Dog, I heard you like digging into source code.',
+               ' *',
+               ' * So I put the GitHub link of this open source web page here:',
+               ' *     https://github.com/biobob/family',
+               ' *',
+               ' */'
+           ].join('\n')))
           .pipe(gulp.dest(conf.paths.dist)),
 
       copy = () => gulp

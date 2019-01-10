@@ -8,7 +8,8 @@
     "fancy-log": "latest",
     "vinyl-ftp": "latest",
     "gulp-htmlmin": "latest",
-    "gulp-clean-css": "latest"
+    "gulp-clean-css": "latest",
+    "gulp-uglify": "latest"
   },
   "repository": {
     "type": "git",

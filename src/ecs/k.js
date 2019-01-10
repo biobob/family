@@ -3,11 +3,11 @@
         slider = document.createElement('div');
     document.getElementById('menu').insertAdjacentHTML(
         'beforeend',
-        `<label for="menu-flag" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>`
+        '<label for="menu-flag" id="hamburger">\
+            <div></div>\
+            <div></div>\
+            <div></div>\
+        </label>'
     );
     header.insertAdjacentHTML(
         'beforebegin',

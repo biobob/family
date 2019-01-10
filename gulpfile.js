@@ -11,7 +11,6 @@ const gulp = require('gulp'),
                   htm: './src/htm/*.html',
                   css: './src/css/*.css',
                   ecs: './src/ecs/*.js',
-                  php: './src/php/*.php',
                   img: './src/img/*.*',
                   res: './src/res/*.*'
               },
@@ -34,11 +33,6 @@ const gulp = require('gulp'),
           .pipe(htmlmin({ collapseWhitespace: true }))
           .pipe(gulp.dest(conf.paths.dist)),
       
-      php = () => gulp
-          .src(conf.paths.src.php)
-          .pipe(debug({title: 'Debug php:'}))
-          .pipe(gulp.dest(conf.paths.dist)),
-      
       copy = () => gulp
           .src([conf.paths.src.css, conf.paths.src.ecs, conf.paths.src.img, conf.paths.src.res], {base: conf.paths.src.dir})
           .pipe(debug({title: 'Debug copy:'}))
@@ -50,4 +44,4 @@ const gulp = require('gulp'),
         .pipe(conf.ftp.connection.dest('/web'));
 
 // default task (called from CLI when executing `gulp`)
-gulp.task('default', gulp.series(gulp.parallel(html, php, copy), deploy));
+gulp.task('default', gulp.series(gulp.parallel(html, copy), deploy));

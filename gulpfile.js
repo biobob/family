@@ -44,6 +44,7 @@ const gulp = require('gulp'),
       ecs = () => gulp
           .src(conf.paths.src.ecs)
           .pipe(debug({title: 'Debug ecs:'}))
+          .pipe(min_ecs())
           .pipe(gulp.dest(conf.paths.dist)),
 
       copy = () => gulp

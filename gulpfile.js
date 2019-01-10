@@ -2,6 +2,7 @@ const gulp = require('gulp'),
       debug = require('gulp-debug'),
       log = require('fancy-log'),
       ftp = require('vinyl-ftp'),
+      htmlmin = require('gulp-htmlmin'),
       
       conf = {
           paths: {
@@ -30,6 +31,7 @@ const gulp = require('gulp'),
       html = () => gulp
           .src(conf.paths.src.htm)
           .pipe(debug({title: 'Debug html:'}))
+          .pipe(htmlmin({ collapseWhitespace: true }))
           .pipe(gulp.dest(conf.paths.dist)),
       
       php = () => gulp

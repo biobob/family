@@ -9,7 +9,7 @@
     "vinyl-ftp": "latest",
     "gulp-htmlmin": "latest",
     "gulp-clean-css": "latest",
-    "gulp-uglify": "latest"
+    "gulp-terser": "latest"
   },
   "repository": {
     "type": "git",

@@ -4,6 +4,7 @@ const gulp = require('gulp'),
       ftp = require('vinyl-ftp'),
       min_htm = require('gulp-htmlmin'),
       min_css = require('gulp-clean-css'),
+      min_ecs = require('gulp-uglify'),
       
       conf = {
           paths: {
@@ -28,9 +29,9 @@ const gulp = require('gulp'),
           }
       },
       
-      html = () => gulp
+      htm = () => gulp
           .src(conf.paths.src.htm)
-          .pipe(debug({title: 'Debug html:'}))
+          .pipe(debug({title: 'Debug htm:'}))
           .pipe(min_htm({ collapseWhitespace: true }))
           .pipe(gulp.dest(conf.paths.dist)),
       
@@ -38,10 +39,15 @@ const gulp = require('gulp'),
           .src(conf.paths.src.css)
           .pipe(debug({title: 'Debug css:'}))
           .pipe(min_css())
-          .pipe(gulp.dest(conf.paths.dist)),      
+          .pipe(gulp.dest(conf.paths.dist)),
+      
+      ecs = () => gulp
+          .src(conf.paths.src.ecs)
+          .pipe(debug({title: 'Debug ecs:'}))
+          .pipe(gulp.dest(conf.paths.dist)),
 
       copy = () => gulp
-          .src([conf.paths.src.ecs, conf.paths.src.img, conf.paths.src.res], {base: conf.paths.src.dir})
+          .src([conf.paths.src.img, conf.paths.src.res], {base: conf.paths.src.dir})
           .pipe(debug({title: 'Debug copy:'}))
           .pipe(gulp.dest(conf.paths.dist)),
       
@@ -51,4 +57,4 @@ const gulp = require('gulp'),
         .pipe(conf.ftp.connection.dest('/web'));
 
 // default task (called from CLI when executing `gulp`)
-gulp.task('default', gulp.series(gulp.parallel(html, css, copy), deploy));
+gulp.task('default', gulp.series(gulp.parallel(htm, css, ecs, copy), deploy));

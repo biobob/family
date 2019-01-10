@@ -11,6 +11,7 @@ body {
   --menu-font-size: 120%;
   --head-top-font-color: #fff;
   --head-scr-font-color: #aaa;
+  --shadow-color: #00000099;
   --royal-green: #004f28;
   --slider-width: 180px;
 }
@@ -27,12 +28,20 @@ header {
 }
 header.scroll {
   background-color: #fff;
-  box-shadow: 1px 1px 3px 0;
+  box-shadow: 1px 1px 3px var(--shadow-color);
 }
 header > .wrapper > div:first-child {
   flex-grow: 1;
   float: left;
   padding-left: var(--site-hrz-padding);
+}
+.logo {
+  background-image: url(../img/w.svg);
+  background-repeat: no-repeat;
+  background-position: var(--site-hrz-padding) 0;
+}
+header.scroll .logo {
+  background-image: url(../img/g.svg);
 }
 header ul,
 #slider ul {
@@ -50,10 +59,9 @@ header ul li a {
   padding: var(--menu-vrt-padding) var(--menu-hrz-padding);
   margin: var(--menu-margin) 0;
   color: var(--head-top-font-color);
-  text-shadow: 0.05em 0.03em #00000099;
+  text-shadow: 0.05em 0.03em var(--shadow-color);
   transition: all 0.2s ease-out;
 }
-
 header ul li:last-child a {
   padding-right: 0;
 }
@@ -65,13 +73,6 @@ header ul li.current a {
   cursor: default;
   color: var(--royal-green);
   text-shadow: 0.05em 0.03em #00000000;
-}
-.logo {
-  fill: var(--head-top-font-color);
-  transition: all 0.2s ease-out;
-}
-header.scroll .logo {
-  fill: var(--head-scr-font-color);
 }
 .wrapper {
   display: flex;
@@ -102,9 +103,11 @@ header.scroll .logo {
   margin: 3px auto;
   background-color: var(--head-top-font-color);
   transition: all .2s ease-out;
+  box-shadow: 0.03em 0.02em 0.08em #00000066;
 }
 header.scroll #hamburger > div {
   background-color: var(--head-scr-font-color);
+  box-shadow: 0.03em 0.02em 0.1em #00000000;
 }
 #menu-flag:checked ~ * #hamburger > div:nth-child(1) {
   transform: translateY(0.27em) rotateZ(45deg);
@@ -209,6 +212,7 @@ main > section > p:first-child {
 }
 #menu-flag:checked ~ header #menu a {
   color: transparent;
+  text-shadow: 0.05em 0.03em #00000000;
 }
 p {
   text-align: justify;
@@ -239,9 +243,11 @@ p {
   }
   header ul li.current a {
     color: var(--head-top-font-color);
+    text-shadow: 0.05em 0.03em var(--shadow-color);
   }
   header.scroll ul li.current a {
     color: var(--head-scr-font-color);
+    text-shadow: 0.05em 0.03em #00000000;
   }
   #hamburger {
     display: inline-block;

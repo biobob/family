@@ -52,7 +52,8 @@ const gulp = require('gulp'),
                ' * So I put the GitHub link of this open source web page here:',
                ' *     https://github.com/biobob/family',
                ' *',
-               ' */'
+               ' */',
+               ''
            ].join('\n')))
           .pipe(gulp.dest(conf.paths.dist)),
 

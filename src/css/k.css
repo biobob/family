@@ -112,12 +112,15 @@ header.scroll #hamburger > div {
 }
 #menu-flag:checked ~ * #hamburger > div:nth-child(1) {
   transform: translateY(0.27em) rotateZ(45deg);
+  box-shadow: 0.03em 0.02em 0.1em #00000000;
 }
 #menu-flag:checked ~ * #hamburger > div:nth-child(2) {
   width: 0;
+  box-shadow: 0.03em 0.02em 0.1em #00000000;
 }
 #menu-flag:checked ~ * #hamburger > div:nth-child(3) {
   transform: translateY(-0.27em) rotateZ(-45deg);
+  box-shadow: 0.03em 0.02em 0.1em #00000000;
 }
 #slider {
   position: fixed;

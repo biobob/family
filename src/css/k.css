@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Cinzel|Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Cinzel|Montserrat|Open+Sans:800);
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -45,7 +45,8 @@ header.scroll .logo {
   background-image: url(g.svg);
 }
 header ul,
-#slider ul {
+#slider ul,
+.ribbon ul {
   float: left;
   margin: 0;
   padding: 0;
@@ -195,6 +196,66 @@ header.scroll #hamburger > div {
   margin-top: 0;
   padding-top: var(--site-hrz-padding);
 }
+.ribbon {
+  background: radial-gradient(ellipse at center, rgba(44,109,91,1) 0%,rgba(0,48,34,1) 100%);
+  color: #c6bb9f;
+  text-shadow: 0.05em 0.03em var(--shadow-color);
+  transition: all .2s ease;
+}
+.ribbon section {
+  width: 100%;
+  padding-bottom: 1.5em;
+}
+.ribbon p,
+.ribbon ul {
+  width: 100%;
+  text-align: center;
+}
+.ribbon ul li {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  padding: 0.5em;
+  margin: 0 calc(var(--site-hrz-padding) / 2);
+  border: 1px solid #c6bb9f55;
+  text-align: center;
+  box-shadow: 0 0 3px var(--shadow-color);
+}
+.ribbon ul li:first-child {
+  margin-left: 0;
+}
+.ribbon ul li:last-child {
+  margin-right: 0;
+}
+.ribbon ul li span {
+  display: block;
+  position: relative;
+  line-height: 1.4em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 200%;
+  text-shadow: none;
+}
+.ribbon ul li span:before {
+  position: absolute;
+  width: 2em;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  content: attr(data-text);
+
+  background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ribbon ul li span:after {
+  position: absolute;
+  width: 2em;
+  left: 0;
+  top: 0;
+  content: attr(data-text);
+  text-shadow: -0.1px 0 0.1px #c6bb9f, 0 0.1px 0.1px #c6bb9f, 3px 3px 7px rgba(0, 0, 0, 0.4), -3px -3px 7px rgba(0, 0, 0, 0.4);
+}
 main > section {
   flex-grow: 1;
   margin-top: calc(2 * var(--site-vrt-padding) + 32px + 2 * var(--menu-vrt-padding) + 2 * var(--menu-margin));
@@ -205,11 +266,13 @@ main > section {
 main > section > p:first-child {
   margin-top: 0;
 }
-#menu-flag:checked ~ .cover,
-#menu-flag:checked ~ main > section {
+#menu-flag:checked ~ main > section,
+#menu-flag:checked ~ .ribbon,
+#menu-flag:checked ~ .cover {
   filter: sepia(1);
 }
 #menu-flag:checked ~ main > section,
+#menu-flag:checked ~ .ribbon,
 #menu-flag:checked ~ .cover,
 #menu-flag:checked ~ #slider {
   transform: translateX(calc(-1 * var(--slider-width)));

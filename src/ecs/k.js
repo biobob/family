@@ -9,7 +9,7 @@
           slider = document.createElement('div'),
           setRibbon = () => {
             // 2019-05-18T13:00:00 UTC = 2019-05-18T15:00:00 CEST
-            let diff = new Date() - new Date('2019-05-18T13:00:00');
+            let diff = new Date() - new Date('2019-05-18T13:00:00Z');
             $('#counter').innerHTML = diff <= 0 ? 'Do našej svadby ostáva' : 'Sme šťastne svoji už';
             diff /= 10000;
             $('#days').innerHTML = value(diff / 8640, 'deň', 'dni', 'dní');

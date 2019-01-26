@@ -254,7 +254,7 @@ header.scroll #hamburger > div {
   left: 0;
   top: 0;
   content: attr(data-text);
-  text-shadow: -0.1px 0 0.1px #c6bb9f, 0 0.1px 0.1px #c6bb9f, 3px 3px 7px rgba(0, 0, 0, 0.4), -3px -3px 7px rgba(0, 0, 0, 0.4);
+  text-shadow: -0.1px 0 0.1px #c6bb9f, 0 0.1px 0.1px #c6bb9f, 1px 1px 3px rgba(0, 0, 0, 0.4), -1px -1px 3px rgba(0, 0, 0, 0.4);
 }
 main > section {
   flex-grow: 1;

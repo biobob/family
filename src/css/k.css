@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 1em;
+  overflow-y: scroll;
   background-color: #edece7;
   --site-hrz-padding: 1.2em;
   --site-vrt-padding: 0.8em;

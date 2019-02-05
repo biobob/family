@@ -281,8 +281,33 @@ main > section > p:first-child {
   color: transparent;
   text-shadow: 0.05em 0.03em #00000000;
 }
+main > section a {
+  color: var(--royal-green);
+  text-decoration: none;
+}
+main > section a:hover {
+  text-decoration: underline;
+}
 p {
   text-align: justify;
+}
+h1 {
+  font-family: 'Cinzel', serif;
+  font-weight: normal;
+  font-size: 130%;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+table {
+  border-collapse: collapse;
+}
+td {
+  padding: 0 0 0.33em 0;
+  margin: 0;
+  vertical-align: top;
+}
+td:first-child {
+  padding-right: 1em;
 }
 @media screen and (max-width: 35.5em) { /* 568px or less */
   header ul {
@@ -341,5 +366,9 @@ p {
   }
   .narrow {
     display: none;
+  }
+  .columns-2 {
+    width: 50%;
+    float: left;
   }
 }

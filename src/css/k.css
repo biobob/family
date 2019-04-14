@@ -281,6 +281,55 @@ main > section {
 main > section > p:first-child {
   margin-top: 0;
 }
+.timeline {
+  position: relative;
+  list-style: none;
+  padding: var(--site-hrz-padding);
+  padding-left: 24px;
+  margin-left: 90px;
+  border-left: 4px solid var(--royal-green);
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.timeline .event {
+  border-bottom: 1px dashed rgba(107, 106, 103, 0.25);
+  padding-bottom: var(--site-hrz-padding);
+  margin-bottom: var(--site-hrz-padding);
+  position: relative;
+}
+.timeline .event:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.timeline .event:before, .timeline .event:after {
+  position: absolute;
+  display: block;
+}
+.timeline .event:before {
+  content: attr(data-date);
+  text-align: right;
+  min-width: 100px;
+  left: -152px;
+  font-size: 90%;
+}
+.timeline .event:after {
+  content: "";
+  height: 11px;
+  width: 11px;
+  top: 5px;
+  box-shadow: 0 0 0 4px var(--royal-green);
+  border-radius: 50%;
+  background-color: #edece7;
+  left: -32px;
+}
+.timeline .event h3 {
+  margin-top: 0;
+}
+.timeline .event p:last-of-type {
+  margin-bottom: 0;
+}
 #menu-flag:checked ~ main > section,
 #menu-flag:checked ~ .ribbon,
 #menu-flag:checked ~ .cover {

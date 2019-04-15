@@ -330,6 +330,12 @@ main > section > p:first-child {
 .timeline .event p:last-of-type {
   margin-bottom: 0;
 }
+.timeline .event a:not(.inline) {
+  padding-right: 7px;
+}
+.timeline .event img {
+  margin-top: 7px;
+}
 #menu-flag:checked ~ main > section,
 #menu-flag:checked ~ .ribbon,
 #menu-flag:checked ~ .cover {
